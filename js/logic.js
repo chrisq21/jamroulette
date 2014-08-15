@@ -55,5 +55,16 @@ $(document).ready(function() {
 		peer_audio.attr('src', URL.createObjectURL(peer_stream));
 		peer_audio.get(0).play();
 	}
+
+	$('#chord-form').submit(function(form) {
+		var song = $(form.target)[0][0].value; 
+		var chorus = $(form.target)[0][1].value;
+		var verse = $(form.target)[0][2].value;
+		var html = '<h3>'+ song + '</h3>';
+		html += '<h4>Chorus: '+chorus+ '</h4>';
+		html += '<h4>Verse: '+verse+ '</h4>';
+		$('#song-info').append(html);
+		return false;
+	})
 	
 })
